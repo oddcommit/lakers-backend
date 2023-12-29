@@ -1,0 +1,14 @@
+*.pyc
+__pycache__
+.DS_*
+.env
+*.dump
+*.sql
+.idea
+!scripts/丨丨fix_reception_reason.sql
+/local_work/
+/tests/outputs/
+/dataframe
+envs.json
+cdk.context.json
+log/

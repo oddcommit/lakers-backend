@@ -1,0 +1,9 @@
+{"model": "data_models.realestatetype","pk": 1,"fields": {"type": "建物"}}
+{"model": "data_models.realestatetype","pk": 2,"fields": {"type": "土地"}}
+{"model": "data_models.realestatetype","pk": 3,"fields": {"type": "区分建物"}}
+{"model": "data_models.realestatetype","pk": 4,"fields": {"type": "共担"}}
+{"model": "data_models.realestatetype","pk": 5,"fields": {"type": "その他"}}
+{"model": "data_models.realestatetype","pk": 6,"fields": {"type": "一棟"}}
+{"model": "data_models.realestatebooktype","pk": 1,"fields": {"type": "連先"}}
+{"model": "data_models.realestatebooktype","pk": 2,"fields": {"type": "連続"}}
+{"model": "data_models.realestatebooktype","pk": 3,"fields": {"type": "単独"}}

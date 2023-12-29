@@ -1,0 +1,12 @@
+.venv;
+.vscode;
+.env;
+.gitignore;
+README.md;
+local_work
+tests
+temp_cdk
+venv
+.venv
+/dataframe
+dataframe

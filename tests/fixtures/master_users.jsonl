@@ -1,0 +1,1 @@
+{"model": "data_models.user","pk": 1,"fields": {"email": "sample@example.com","password":"Password12334556678","first_name": "","last_name": "","is_active":1, "is_staff":1, "prev_password":""}}

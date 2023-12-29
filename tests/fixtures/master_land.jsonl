@@ -1,0 +1,1 @@
+{"model": "data_models.land","pk": 1,"fields": {"location": "千代田区神田三崎町3丁目","chiban":"17-6","real_estate_id": "","latitude": 35.69524,"longitude":139.57016,"owner_latest_get_date":"2023-08-28","prefecture_city_id":655,"registration_map_id":1,"created_at":"2023-08-28","updated_at":"2023-08-28"}}

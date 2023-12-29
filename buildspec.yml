@@ -1,0 +1,30 @@
+version: 0.2
+
+env:
+  parameter-store:
+    DOCKER_USER: "/lakers-saas/docker/username"
+    DOCKER_TOKEN: "/lakers-saas/docker/token"
+
+phases:
+  install:
+    commands:
+      - aws --version
+      - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      - unzip awscliv2.zip
+      - ls -l /root/.pyenv/shims/aws
+      - ./aws/install --bin-dir /root/.pyenv/shims --install-dir /usr/local/aws-cli --update
+      - aws --version
+  pre_build:
+    commands:
+      - AWS_ACCOUNT_ID=$(echo ${CODEBUILD_BUILD_ARN} | cut -f 5 -d :)
+      - echo ${AWS_ACCOUNT_ID}
+      - aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com
+      - echo $DOCKER_TOKEN | docker login -u $DOCKER_USER --password-stdin
+  build:
+    commands:
+      - docker build -t lakers-saas-backend-ecr-repository .
+  post_build:
+    commands:
+      - docker tag lakers-saas-backend-ecr-repository:latest $AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/lakers-saas-backend-ecr-repository:latest
+      - docker tag lakers-saas-backend-ecr-repository:latest $AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/lakers-saas-backend-ecr-repository:$CODEBUILD_RESOLVED_SOURCE_VERSION
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/lakers-saas-backend-ecr-repository:latest

@@ -1,0 +1,12 @@
+"""出力用メッセージ管理（パスワード更新時）"""
+DONT_CURRENT_PSW = "現在と同じパスワードは登録できません"
+NOT_INPUT_CONFIRM_PSW = "確認用パスワードを入力してください"
+DONT_MATCH_NEW_CONFIRM = "新しいパスワードが一致していません"
+DONT_ALLOW_PAST_PSW = "一つ前に登録したパスワードは登録できません"
+CHANGE_PSW_FAILED = "パスワードの変更に失敗しました"
+
+"""出力用メッセージ管理（ログイン時）"""
+NOT_REGISTERED_EMAIL = "このメールアドレスは登録されていません"
+DONT_MATCH_CURRENT_PSW = "現在のパスワードと一致していません"
+NOT_INPUT_EMAIL = "メールアドレスが入力されていません"
+NOT_INPUT_PSW = "パスワードが入力されていません"
